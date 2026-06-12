@@ -1,6 +1,6 @@
 # 🎓 GEU Smart Academic Assistant
 
-An AI-powered Retrieval-Augmented Generation (RAG) academic workspace that enables students to upload PDFs, perform semantic search, ask contextual questions, and receive intelligent answers using Google Gemini AI, LangChain, and ChromaDB.
+An AI-powered Retrieval-Augmented Generation (RAG) academic workspace that enables students to upload study materials, textbook chapters, and lecture notes in PDF format and perform semantic search, ask questions, and receive intelligent answers using Google Gemini AI, LangChain, and ChromaDB.
 
 ---
 
@@ -8,72 +8,44 @@ An AI-powered Retrieval-Augmented Generation (RAG) academic workspace that enabl
 
 ### 🔐 Login Page
 
-![Login Page](docs/screenshots/login.png)
+![Login Page](docs/screenshot/login.png)
 
 ### 📝 Registration Page
 
-![Register Page](docs/screenshots/register.png)
+![Register Page](docs/screenshot/register.png)
 
 ### 📊 Dashboard
 
-![Dashboard](docs/screenshots/dashboard.png)
+![Dashboard](docs/screenshot/dashboard.png)
 
 ### 📂 PDF Upload
 
-![PDF Upload](docs/screenshots/upload-pdf.png)
+![PDF Upload](docs/screenshot/upload-pdf.png)
 
 ### 🤖 AI Chat Interface
 
-![AI Chat](docs/screenshots/chat.png)
+![AI Chat](docs/screenshot/chat.png)
 
 ### 📜 Chat History
 
-![Chat History](docs/screenshots/history.png)
-
----
-
-## 🏗️ System Architecture
-
-![Architecture](docs/architecture.png)
-
-### Workflow
-
-```text
-User Uploads PDF
-        ↓
-PDF Text Extraction
-        ↓
-Text Chunking (LangChain)
-        ↓
-Gemini Embeddings
-        ↓
-ChromaDB Vector Storage
-        ↓
-Semantic Retrieval
-        ↓
-Gemini Flash Lite
-        ↓
-Answer Generation
-        ↓
-Chat History Saved in MySQL
-```
+![Chat History](docs/screenshot/history.png)
 
 ---
 
 ## 🚀 Key Features
 
 * Secure JWT Authentication
+* User Registration & Login
 * PDF Upload & Management
 * Retrieval-Augmented Generation (RAG)
 * LangChain Integration
 * ChromaDB Vector Database
 * Gemini AI Powered Question Answering
-* Semantic Search Across Documents
+* Semantic Search Across Uploaded Documents
 * Multi-Document Query Support
 * Chat History Tracking
 * Responsive React Dashboard
 * Automatic PDF Processing Pipeline
-* Background Embedding Generation
 
 ---
 
@@ -90,9 +62,10 @@ Chat History Saved in MySQL
 ### Backend
 
 * Flask
+* Flask-SQLAlchemy
 * Flask-JWT-Extended
 * Flask-CORS
-* SQLAlchemy
+* bcrypt
 
 ### Database
 
@@ -117,8 +90,7 @@ GEU_Smart_Assistant/
 ├── backend/
 ├── frontend/
 ├── docs/
-│   ├── architecture.png
-│   └── screenshots/
+│   └── screenshot/
 │       ├── login.png
 │       ├── register.png
 │       ├── dashboard.png
@@ -126,6 +98,63 @@ GEU_Smart_Assistant/
 │       ├── chat.png
 │       └── history.png
 └── README.md
+```
+
+---
+
+## ⚙️ Environment Variables
+
+Create a `.env` file inside the backend directory:
+
+```env
+GOOGLE_API_KEY=your_gemini_api_key
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_password
+DB_NAME=geu_smart_assistant
+JWT_SECRET_KEY=your_secret_key
+```
+
+---
+
+## 💻 Installation & Setup
+
+### Backend Setup
+
+```bash
+cd backend
+
+python -m venv venv
+
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+python app.py
+```
+
+Backend runs on:
+
+```text
+http://localhost:5001
+```
+
+---
+
+### Frontend Setup
+
+```bash
+cd frontend
+
+npm install
+
+npm run dev
+```
+
+Frontend runs on:
+
+```text
+http://localhost:5173
 ```
 
 ---
@@ -143,11 +172,10 @@ GEU_Smart_Assistant/
 
 ## 🎯 Future Enhancements
 
-* PDF Summarization
 * AI Quiz Generation
+* PDF Summarization
 * Voice-Based Question Answering
 * Multi-Language Support
-* Admin Dashboard
 * Cloud Deployment
 * Collaborative Learning Workspace
 
