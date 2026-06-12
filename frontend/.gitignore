@@ -1,0 +1,67 @@
+# =========================
+# React / Vite
+# =========================
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules/
+
+# Build files
+dist/
+dist-ssr/
+
+# Local env files
+*.local
+
+# =========================
+# Python / Flask
+# =========================
+
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables
+.env
+backend/.env
+
+# =========================
+# AI / RAG Project Files
+# =========================
+
+# ChromaDB vector database
+backend/chroma_db/
+
+# Uploaded PDFs
+backend/uploads/
+
+# FAISS (if used later)
+*.faiss
+
+# =========================
+# IDE & OS Files
+# =========================
+
+.vscode/*
+!.vscode/extensions.json
+
+.idea/
+
+.DS_Store
+
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
